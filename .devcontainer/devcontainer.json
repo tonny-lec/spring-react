@@ -1,0 +1,28 @@
+{
+  "name": "CalmLine Focus Dev Environment",
+  "context": "..",
+  "dockerFile": "Dockerfile",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "editor.formatOnSave": true,
+        "java.configuration.runtimes": [
+          {
+            "name": "JavaSE-21",
+            "path": "/usr/local/jdk-21.0.5"
+          }
+        ]
+      },
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vscjava.vscode-maven",
+        "esbenp.prettier-vscode",
+        "mhutchie.git-graph",
+        "ms-vscode.vscode-typescript-tslint-plugin"
+      ]
+    }
+  },
+  "postCreateCommand": "cd backend && mvn clean install"
+  //"workspaceFolder": "/workspace"
+}
