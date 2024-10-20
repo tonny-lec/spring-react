@@ -1,5 +1,5 @@
 ## 構成
-
+```
 spring-react/
 │
 ├── backend/ # Spring Boot アプリケーション
@@ -13,7 +13,6 @@ spring-react/
 └── Dockerfile
 
 ## backend フォルダで
-
 ```
 cd backend
 mvn spring-boot:run
