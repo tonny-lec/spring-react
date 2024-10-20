@@ -6,5 +6,8 @@ FROM cimg/openjdk:21.0.5-node
 # Javaの確認
 RUN java --version && mvn --version && node --version && npm --version
 
+# PostgreSQLクライアントのインストール
+RUN apt-get install -y postgresql-client
+
 # 作業ディレクトリを指定
 WORKDIR /workspace

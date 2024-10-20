@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title >CalmLine Focus</title>
+    <script type="module" th:src="@{/{jsFile}(jsFile=${jsFile})}"></script>
+    <th:block th:each="css : ${cssFiles}">
+        <link rel="stylesheet" crossorigin th:href="@{/{cssFile}(cssFile=${css})}">
+    </th:block>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>

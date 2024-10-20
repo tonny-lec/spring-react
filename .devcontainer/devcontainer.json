@@ -2,6 +2,7 @@
   "name": "CalmLine Focus Dev Environment",
   "context": "..",
   "dockerFile": "Dockerfile",
+  "runServices": ["database"],
   "customizations": {
     "vscode": {
       "settings": {
@@ -24,5 +25,4 @@
     }
   },
   "postCreateCommand": "cd backend && mvn clean install"
-  //"workspaceFolder": "/workspace"
 }
