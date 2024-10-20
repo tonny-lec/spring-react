@@ -1,14 +1,11 @@
 package jp.focus.line.calm.config;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
 import java.io.File;
 import java.util.Map;
 import java.util.Objects;
-
 import org.junit.jupiter.api.Test;
 import org.thymeleaf.util.StringUtils;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -23,14 +20,15 @@ public class ApplicationConfigTest {
         assertTrue(manifestFile.exists(), "manifest.json が見つかりません");
 
         // JSON を Map に読み込み、特定のキーが存在するか確認
-        Map<String, FileOptions> manifest = mapper.readValue(manifestFile,
-                new TypeReference<>() {
-                });
+        Map<String, FileOptions> manifest =
+                mapper.readValue(manifestFile, new TypeReference<>() {});
         // main.tsx のエントリからハッシュ付きファイル名を取得
         FileOptions mainEntry = manifest.get("src/main.tsx");
         assertTrue(!Objects.isNull(mainEntry), "main.js のエントリが見つかりません");
-        assertTrue(StringUtils.contains(mainEntry.getCss().get(0), "assets/main"), "main.js のエントリが見つかりません");
+        assertTrue(StringUtils.contains(mainEntry.getCss().get(0), "assets/main"),
+                "main.js のエントリが見つかりません");
 
-        assertTrue(StringUtils.contains(mainEntry.getFile(), "assets/main"), "main.js のエントリが見つかりません");
+        assertTrue(StringUtils.contains(mainEntry.getFile(), "assets/main"),
+                "main.js のエントリが見つかりません");
     }
 }

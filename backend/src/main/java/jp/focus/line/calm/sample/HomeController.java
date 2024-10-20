@@ -1,11 +1,9 @@
 package jp.focus.line.calm.sample;
 
 import java.util.Map;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
 import jp.focus.line.calm.config.FileOptions;
 
 @Controller
