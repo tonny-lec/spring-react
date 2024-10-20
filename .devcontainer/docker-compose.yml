@@ -1,37 +1,29 @@
 services:
-  spring-backend:
+  app:
     build:
-      contex: ..
-      dockerfile: Dockerfile
-    ports:
-      - "8085:8085"
-    depends_on:
-      - postgres
-    networks:
-      - app-network
-
-  react-frontend:
-    image: node:18-alpine
-    working_dir: /workspace/frontend
+      context: ..
+      dockerfile: ./.devcontainer/Dockerfile
+    # working_dir: /workspace
     volumes:
-      - ../frontend:/workspace/frontend:cached
-    command: ["npm", "start"]
-    ports:
-      - "3001:3000"  # Reactのポート変更
-    networks:
-      - app-network
+      - ..:/workspace
+    # ports:
+    #   - 8080:8080
+    tty: true
+    depends_on:
+      - db
 
-  postgres:
-    image: postgres:14
+  db:
+    image: postgres:15
+    restart: always
     environment:
-      POSTGRES_USER: dev
-      POSTGRES_PASSWORD: devpassword
-      POSTGRES_DB: calmline_db
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: mydatabase
     ports:
-      - "5433:5432"  # PostgreSQLのポート変更
-    networks:
-      - app-network
+      - 5432:5432
+    volumes:
+      - ../postgres-data:/var/lib/postgresql/data
 
-networks:
-  app-network:
-    driver: bridge
+volumes:
+  postgres-data:
+    driver: local

@@ -1,8 +1,14 @@
 {
   "name": "CalmLine Focus Dev Environment",
-  "context": "..",
-  "dockerFile": "Dockerfile",
-  "runServices": ["database"],
+  "workspaceFolder": "/workspace",
+  "dockerComposeFile": [
+    "docker-compose.yml"
+  ],
+  "service": "app",
+  "runServices": [
+    "app",
+    "db"
+  ],
   "customizations": {
     "vscode": {
       "settings": {
@@ -20,7 +26,6 @@
         "vscjava.vscode-maven",
         "esbenp.prettier-vscode",
         "mhutchie.git-graph",
-        "ms-vscode.vscode-typescript-tslint-plugin",
         "shengchen.vscode-checkstyle",
         "mtxr.sqltools-driver-pg",
         "mtxr.sqltools",
