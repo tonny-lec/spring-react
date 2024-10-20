@@ -6,15 +6,23 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+/** sample controller. */
 @Controller
 public class HomeController {
 
   private final Map<String, FileOptions> assetManifest;
 
+  /** constructor. */
   public HomeController(Map<String, FileOptions> assetManifest) {
     this.assetManifest = assetManifest;
   }
 
+  /**
+   * initialize of "/home".
+   *
+   * @param model model.
+   * @return use html file path.
+   */
   @GetMapping("/home")
   public String home(Model model) {
     // main.tsx のエントリからハッシュ付きファイル名を取得

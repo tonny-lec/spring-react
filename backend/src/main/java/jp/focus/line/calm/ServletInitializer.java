@@ -3,6 +3,7 @@ package jp.focus.line.calm;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
+/** application initializer. */
 public class ServletInitializer extends SpringBootServletInitializer {
 
   @Override

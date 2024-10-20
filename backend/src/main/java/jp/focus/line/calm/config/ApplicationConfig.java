@@ -9,9 +9,16 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+/** Aplication Config. */
 @Configuration
 public class ApplicationConfig implements WebMvcConfigurer {
 
+  /**
+   * created manifest.json from vite of React. include it and parse json.
+   *
+   * @return parsed json.
+   * @throws IOException failed parse json.
+   */
   @Bean
   public Map<String, FileOptions> assetManifest() throws IOException {
     ObjectMapper mapper = new ObjectMapper();
