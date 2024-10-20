@@ -22,7 +22,7 @@ public class HomeController {
         // main.tsx のエントリからハッシュ付きファイル名を取得
         FileOptions mainEntry = assetManifest.get("src/main.tsx");
         model.addAttribute("jsFile", mainEntry.getFile());
-        model.addAttribute("cssFile", mainEntry.getCss());
+        model.addAttribute("cssFiles", mainEntry.getCss());
 
         return "index";
     }

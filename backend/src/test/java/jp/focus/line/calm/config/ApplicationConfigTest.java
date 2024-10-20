@@ -29,7 +29,8 @@ public class ApplicationConfigTest {
         // main.tsx のエントリからハッシュ付きファイル名を取得
         FileOptions mainEntry = manifest.get("src/main.tsx");
         assertTrue(!Objects.isNull(mainEntry), "main.js のエントリが見つかりません");
+        assertTrue(StringUtils.contains(mainEntry.getCss().get(0), "assets/main"), "main.js のエントリが見つかりません");
 
-        assertTrue(StringUtils.contains(mainEntry, "assets/main"), "main.js のエントリが見つかりません");
+        assertTrue(StringUtils.contains(mainEntry.getFile(), "assets/main"), "main.js のエントリが見つかりません");
     }
 }
