@@ -23,7 +23,8 @@
         "ms-vscode.vscode-typescript-tslint-plugin",
         "shengchen.vscode-checkstyle",
         "mtxr.sqltools-driver-pg",
-        "mtxr.sqltools"
+        "mtxr.sqltools",
+        "vmware.vscode-boot-dev-pack"
       ]
     }
   },
