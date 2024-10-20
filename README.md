@@ -11,6 +11,7 @@ spring-react/
 └── .devcontainer/ # Devcontainer の構成
 └── devcontainer.json
 └── Dockerfile
+```
 
 ## backend フォルダで
 ```
