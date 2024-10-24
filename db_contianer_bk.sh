@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # バックアップの対象ディレクトリ（変更してください）
-TARGET_DIR="./postgres-data"
+TARGET_DIR="/home/tonny/workspace/calmline-focus/postgres-data"
 
 # バックアップ保存先（Windows側のディレクトリに保存）
 BACKUP_DIR="/mnt/c/dump"
@@ -22,6 +22,6 @@ else
 fi
 
 # 7日以上経過した古いバックアップを削除
-find "$BACKUP_DIR" -type f -name "*.tar.gz" -mtime +7 -exec rm {} \;
+find "$BACKUP_DIR" -type f -name "*.tar.gz" -mtime +14 -exec rm {} \;
 
 echo "Old backups cleaned up."
