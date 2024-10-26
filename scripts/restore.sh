@@ -1,3 +1,3 @@
 #!/bin/bash
 
-docker exec -i postgres-db psql -U user mydatabase < ../db_data/dump.sql
+cat ./db_data/dump.sql | docker exec -i calmline-focus_devcontainer-db-1 psql -U user -d mydatabase
