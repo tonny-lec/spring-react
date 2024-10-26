@@ -1,8 +1,12 @@
 #!/bin/bash
 
-# バックアップファイルと復元先のディレクトリの設定
-BACKUP_DIR="/mnt/c/dump"  # バックアップの保存先
-TARGET_DIR="/home/tonny/workspace/calmline-focus/postgres-data"  # リストアする永続化データの場所
+# .env ファイルを読み込み
+if [ -f .env ]; then
+  source .env
+else
+  echo ".env ファイルが見つかりません"
+  exit 1
+fi
 
 # リストアするバックアップファイルを選択 (最新のバックアップを自動選択)
 LATEST_BACKUP=$(ls -t $BACKUP_DIR/*.tar.gz | head -n 1)

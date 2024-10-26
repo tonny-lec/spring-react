@@ -1,10 +1,12 @@
 #!/bin/bash
 
-# バックアップの対象ディレクトリ（変更してください）
-TARGET_DIR="/home/tonny/workspace/calmline-focus/postgres-data"
-
-# バックアップ保存先（Windows側のディレクトリに保存）
-BACKUP_DIR="/mnt/c/dump"
+# .env ファイルを読み込み
+if [ -f .env ]; then
+  source .env
+else
+  echo ".env ファイルが見つかりません"
+  exit 1
+fi
 
 # 日付付きのバックアップファイル名
 DATE=$(date +%Y%m%d_%H%M%S)
