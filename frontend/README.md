@@ -50,13 +50,3 @@ export default tseslint.config({
 ```
 
 ---
-
-## ビルド
-
-```
-# React のビルドを行う
-npm run build
-
-# Spring の静的資材置き場に配置
-cp -r build/* ../backend/src/main/resources/static/frontend/
-```

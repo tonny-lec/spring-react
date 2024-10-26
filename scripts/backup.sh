@@ -1,7 +1,11 @@
 #!/bin/bash
 
-# PostgreSQLコンテナからデータベースのダンプを取得
-# docker exec postgres-db pg_dump -U postgres mydb > mydb_dump_$(date +"%Y%m%d%H%M%S").sql
-# echo "Database dumped to mydb_dump_$(date +"%Y%m%d%H%M%S").sql"
+# .env ファイルを読み込み
+if [ -f ../.env ]; then
+  source ../.env
+else
+  echo ".env ファイルが見つかりません"
+  exit 1
+fi
 
-docker exec -t postgres_db pg_dump -U user mydatabase > ../db_data/dump.sql
+docker exec "$POSTGRE_CONTAINER" pg_dump -U "$POSTGRE_USER" -d "$POSTGRE_DB" > "$DUMP_DIR"

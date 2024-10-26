@@ -1,2 +1,7 @@
 ### VS Code ###
 .vscode/
+
+### local settings ###
+db_bk.log
+.env
+scripts/db_data

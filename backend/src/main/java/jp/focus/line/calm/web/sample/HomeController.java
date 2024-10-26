@@ -1,4 +1,4 @@
-package jp.focus.line.calm.sample;
+package jp.focus.line.calm.web.sample;
 
 import java.util.Map;
 import jp.focus.line.calm.config.FileOptions;
