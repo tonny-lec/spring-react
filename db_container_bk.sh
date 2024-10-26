@@ -23,7 +23,7 @@ else
   exit 1  # 失敗した場合、ここで終了 
 fi
 
-# 7日以上経過した古いバックアップを削除
+# 14 日以上経過した古いバックアップを削除
 find "$BACKUP_DIR" -type f -name "*.tar.gz" -mtime +14 -exec rm {} \;
 
 echo "Old backups cleaned up."
