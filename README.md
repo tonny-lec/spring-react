@@ -61,6 +61,32 @@ $ sudo ./db_restore.sh
 
 ## Maven
 
+### バージョンの変更が発生したとき
+
+- 依存性の整合性チェック
+
+```
+mvn dependency:tree
+```
+
+- maven のキャッシュクリアと再ビルド
+
+```
+mvn clean install
+```
+
+- ユニットテスト、結合テストの実行
+
+```
+mvn test
+```
+
+- 依存ライブラリのアップデート
+
+```
+mvn versions:display-dependency-updates
+```
+
 ### checkstyle
 
 - java  
