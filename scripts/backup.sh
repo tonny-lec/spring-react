@@ -1,3 +1,11 @@
 #!/bin/bash
 
-docker exec calmline-focus_devcontainer-db-1 pg_dump -U user -d mydatabase > ./db_data/dump.sql
+# .env ファイルを読み込み
+if [ -f ../.env ]; then
+  source ../.env
+else
+  echo ".env ファイルが見つかりません"
+  exit 1
+fi
+
+docker exec "$POSTGRE_CONTAINER" pg_dump -U "$POSTGRE_USER" -d "$POSTGRE_DB" > "$DUMP_DIR"
