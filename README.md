@@ -4,36 +4,77 @@
 spring-react/
 │
 ├── backend/ # Spring Boot アプリケーション
-│ └── pom.xml # Maven の設定ファイル
+│   └── pom.xml # Maven の設定ファイル
 │
-├── frontend/ # React + TypeScript アプリケーション
-│ └── package.json # Node.js の設定ファイル
+├── frontend/ # React(vite) + TypeScript アプリケーション
+│   └── package.json # Node.js の設定ファイル
 │
 └── .devcontainer/ # Devcontainer の構成
-└── devcontainer.json
-└── Dockerfile
+    ├── devcontainer.json
+    ├── Dockerfile
+    └── docker-compose.yml
 ```
 
-## backend フォルダで
+## React のビルド
+
+```
+# React のビルドを行う
+npm run build
+
+# Spring の静的資材置き場が、/backend/src/main/resources/static に置かれる
+```
+
+## アプリの起動
 
 ```
 cd backend
 mvn spring-boot:run
 ```
 
-## checkstyle
+## DB
+
+### .env ファイルの作成
+
+- .env.sample を .env に変更する
+
+  ```
+  # ./.env
+  # バックアップの対象ディレクトリ
+  TARGET_DIR="(プロジェクトのある場所の絶対パス)"
+  # バックアップ保存先
+  BACKUP_DIR="(バックアップを置きたい場所)"
+  ```
+
+### バックアップ
+
+※ マウントした DB のディレクトリをバックアップするのはおすすしない
+
+```
+$ sudo ./db_container_bk.sh
+```
+
+### 復元
+
+```
+$ sudo ./db_restore.sh
+```
+
+## Maven
+
+### checkstyle
 
 - java  
   https://github.com/checkstyle/checkstyle/blob/master/src/main/resources/google_checks.xml
 
-## formatter
+### formatter
 
 - java  
   https://github.com/google/styleguide/blob/gh-pages/eclipse-java-google-style.xml
 
-## spotless での formatter
+### spotless での formatter
 
 https://github.com/diffplug/spotless/blob/main/plugin-maven/README.md#java
+
 ```
 user@machine repo % mvn spotless:check
 [ERROR]  > The following files had format violations:
@@ -46,4 +87,3 @@ user@machine repo % mvn spotless:apply
 user@machine repo % mvn spotless:check
 [INFO] BUILD SUCCESS
 ```
-
