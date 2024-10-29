@@ -1,0 +1,5 @@
+pull_request_templates:
+  - name: 機能追加
+    path: feature_pr.md
+  - name: バグ修正
+    path: bugfix_pr.md
