@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+      layout:decorate="~{layout/layout}">
 <head>
     <title >CalmLine Focus</title>
     <script type="module" th:src="@{/{jsFile}(jsFile=${jsFile})}"></script>
@@ -8,6 +10,8 @@
     </th:block>
 </head>
 <body>
-    <div id="root"></div>
+    <div layout:fragment="content">
+        <div id="root"></div>
+    </div>
 </body>
 </html>
