@@ -3,13 +3,13 @@
     "file": "assets/react-CHdo91hT.svg",
     "src": "src/assets/react.svg"
   },
-  "src/main.tsx": {
-    "file": "assets/main-Z4IYYOd6.js",
-    "name": "main",
-    "src": "src/main.tsx",
+  "src/components/home/main.tsx": {
+    "file": "assets/home-BP5lDkLn.js",
+    "name": "home",
+    "src": "src/components/home/main.tsx",
     "isEntry": true,
     "css": [
-      "assets/main-BpmtJbXh.css"
+      "assets/home-BpmtJbXh.css"
     ],
     "assets": [
       "assets/react-CHdo91hT.svg"

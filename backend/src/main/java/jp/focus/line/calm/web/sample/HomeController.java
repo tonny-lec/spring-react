@@ -26,7 +26,7 @@ public class HomeController {
   @GetMapping("/home")
   public String home(Model model) {
     // main.tsx のエントリからハッシュ付きファイル名を取得
-    FileOptions mainEntry = assetManifest.get("src/main.tsx");
+    FileOptions mainEntry = assetManifest.get("src/components/home/main.tsx");
     model.addAttribute("jsFile", mainEntry.getFile());
     model.addAttribute("cssFiles", mainEntry.getCss());
 
