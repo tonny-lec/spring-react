@@ -30,6 +30,6 @@ public class HomeController {
     model.addAttribute("jsFile", mainEntry.getFile());
     model.addAttribute("cssFiles", mainEntry.getCss());
 
-    return "index";
+    return "home/index";
   }
 }
